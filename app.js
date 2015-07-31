@@ -57,8 +57,9 @@ app1.get('/', function (req, res) {
 	count++;
     //res.sendFile('img.png');
     res.json(result1);
-	console.log('No of requests');
-	console.log(count)
+    if(process.pid){
+	console.log('No of requests'+count+'       Current Pid'+process.pid );}
+
 });
 
 app1.listen(7001);
