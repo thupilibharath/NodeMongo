@@ -43,7 +43,7 @@ MongoClient.connect(url, function (err, db) {
             if (err) {
                 console.log(err);
             } else if (result.length) {
-                console.log('Found:', result);
+                console.log('Found: All Records');
                 result1 = result;
             } else {
                 console.log('No document(s) found with defined "find" criteria!');
