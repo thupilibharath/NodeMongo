@@ -1,9 +1,24 @@
 /**
+ * Created by Bharath on 7/31/15.
+ */
+/**
  * Created by Bharath on 7/5/15.
  */
 //lets require/import the mongodb native drivers.
 var mongodb = require('mongodb');
 var express = require('express');
+var http = require('http'),
+    httpProxy = require('http-proxy');
+
+
+var options = {
+    hostnameOnly: true,
+    router: {
+        'domainjakamaka.com': '127.0.0.1:7001/',
+        'domaintwo.net': '127.0.0.1:9001',
+        'domainthree.org': '127.0.0.1:9002'
+    }
+}
 
 var app1 = express();
 
@@ -15,7 +30,7 @@ var MongoClient = mongodb.MongoClient;
 // Connection URL. This is where your mongodb server is running.
 var url = 'mongodb://localhost:27017/sample';
 var result1;
-var count = 0;
+var count = 0
 // Use connect method to connect to the Server
 MongoClient.connect(url, function (err, db) {
     if (err) {
@@ -55,12 +70,12 @@ MongoClient.connect(url, function (err, db) {
 });
 
 app1.get('/', function (req, res) {
-	count++;
+    count++;
     //res.sendFile('img.png');
     res.json('Found All records');
     if(process.pid){
-	console.log('No of requests'+count+' Current Pid'+process.pid );}
+        console.log('No of requests'+count+' Current Pid'+process.pid );}
 
 });
 
-app1.listen(7001);
+app1.listen(7008);

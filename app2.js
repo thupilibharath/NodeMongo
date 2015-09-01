@@ -1,4 +1,7 @@
 /**
+ * Created by Bharath on 7/31/15.
+ */
+/**
  * Created by Bharath on 7/5/15.
  */
 //lets require/import the mongodb native drivers.
@@ -15,7 +18,7 @@ var MongoClient = mongodb.MongoClient;
 // Connection URL. This is where your mongodb server is running.
 var url = 'mongodb://localhost:27017/sample';
 var result1;
-var count = 0;
+var count = 0
 // Use connect method to connect to the Server
 MongoClient.connect(url, function (err, db) {
     if (err) {
@@ -55,12 +58,12 @@ MongoClient.connect(url, function (err, db) {
 });
 
 app1.get('/', function (req, res) {
-	count++;
+    count++;
     //res.sendFile('img.png');
     res.json('Found All records');
     if(process.pid){
-	console.log('No of requests'+count+' Current Pid'+process.pid );}
+        console.log('No of requests'+count+' Current Pid'+process.pid );}
 
 });
 
-app1.listen(7001);
+app1.listen(7003);
