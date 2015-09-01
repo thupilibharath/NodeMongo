@@ -58,6 +58,7 @@ app1.get('/', function (req, res) {
 	count++;
     //res.sendFile('img.png');
     res.json('Found All records');
+    res.end();
     if(process.pid){
 	console.log('No of requests'+count+' Current Pid'+process.pid );}
 
